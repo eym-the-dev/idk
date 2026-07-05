@@ -40,7 +40,11 @@ export async function POST(request: Request) {
   if (!isAdmin) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
 
   const body = await request.json();
-  const messages = Array.isArray(body?.messages) ? body.messages.filter((m) => typeof m === 'string' && m.trim()) : [];
+  
+  // Güncellenen kısım: (m: string) tip tanımı eklendi
+  const messages = Array.isArray(body?.messages) 
+    ? body.messages.filter((m: string) => typeof m === 'string' && m.trim()) 
+    : [];
 
   if (!messages.length) return NextResponse.json({ error: 'messages required' }, { status: 400 });
 
