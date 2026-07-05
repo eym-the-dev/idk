@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-void text-ivory font-sans antialiased;
+    font-feature-settings: 'ss01' on, 'ss02' on;
+  }
+
+  ::selection {
+    @apply bg-gold/25 text-ivory;
+  }
+
+  /* Klavye ile gezinme için görünür odak halkası */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #0A0A0B, 0 0 0 4px theme('colors.gold.DEFAULT');
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* İnce altın hairline ayraç — kart kenarları ve bölüm ayraçları için */
+  .hairline {
+    @apply border border-hairline;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
