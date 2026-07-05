@@ -18,9 +18,9 @@ export async function GET(request: Request) {
   return NextResponse.json({
     messages: [
       'En iyisi de olsan, onun yeri hep ayrı olacak...',
-      'İzlemek sadece içerik değil, bir hissi yakalamaktır.',
-      'Senin rafın burada yavaşça şekilleniyor.',
-      'B',
+      'takmakafaya',
+      'Bu platformu sevdin mi?',
+      'Çok şanslısın. Gerçekten...',
       'Bu bir gizli mesajdır: sitenin yapımcısı seni selamlıyor.',
     ],
   });
